@@ -1,0 +1,196 @@
+openapi: 3.1.0
+info:
+  title: UXCam Data Access Events Users API
+  version: v2
+  description: REST API for programmatic access to UXCam session, user, and event analytics data. Accepts requests in form-encoded format and returns JSON with a success/data envelope. Derived by API Evangelist from the official UXCam developer documentation (https://developer.uxcam.com/docs/data-access-api) and the published Postman collection (https://documenter.getpostman.com/view/9127779/2s935it5r2); UXCam does not publish an OpenAPI document.
+  contact:
+    url: https://developer.uxcam.com
+  x-apievangelist:
+    generated: '2026-07-21'
+    method: derived
+    source: https://developer.uxcam.com/docs/data-access-api + https://documenter.getpostman.com/view/9127779/2s935it5r2
+servers:
+- url: https://api.uxcam.com/v2
+security:
+- AppId: []
+  ApiKey: []
+tags:
+- name: Users
+  description: App users tracked by the UXCam SDK
+paths:
+  /user:
+    get:
+      operationId: listUsers
+      tags:
+      - Users
+      summary: List users
+      description: Retrieve user records with property, usage, location, and device objects.
+      parameters:
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/pageSize'
+      - $ref: '#/components/parameters/filters'
+      responses:
+        '200':
+          description: Paged list of user objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /user/analytics:
+    get:
+      operationId: analyzeUsers
+      tags:
+      - Users
+      summary: Aggregate user analytics
+      description: Aggregated user metrics such as user_count and avg_user_session_duration, with filters, group_by, aggregation, and comparison.
+      parameters:
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/pageSize'
+      - $ref: '#/components/parameters/filters'
+      - $ref: '#/components/parameters/groupBy'
+      - $ref: '#/components/parameters/aggregation'
+      - $ref: '#/components/parameters/comparison'
+      responses:
+        '200':
+          description: Aggregated user analytics.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Envelope'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+components:
+  parameters:
+    filters:
+      name: filters
+      in: query
+      description: 'JSON array of filter objects: {"attribute", "operator", "value"}. Operators: equal, not_equal, in, not_in, greater_than, less_than, between_dates. Dates use ISO 8601.'
+      schema:
+        type: string
+    comparison:
+      name: comparison
+      in: query
+      description: Set to 1 to compare the current period against the previous period.
+      schema:
+        type: integer
+        enum:
+        - 1
+    aggregation:
+      name: aggregation
+      in: query
+      description: 'JSON array of aggregation objects, e.g. {"attribute": "session_duration", "operator": "max"}.'
+      schema:
+        type: string
+    pageSize:
+      name: page_size
+      in: query
+      description: Results per page. Default 50, maximum 1000; rate limits cap a single request at 500 fetched records.
+      schema:
+        type: integer
+        default: 50
+        maximum: 1000
+    groupBy:
+      name: group_by
+      in: query
+      description: 'JSON array of grouping objects: {"attribute", "max_group_number"} (analytics endpoints only).'
+      schema:
+        type: string
+    page:
+      name: page
+      in: query
+      description: Page number (1-indexed). Default 1.
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+  responses:
+    Forbidden:
+      description: The server understands the request but refuses to authorise it.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    TooManyRequests:
+      description: 'Rate limited: max five concurrent requests per second, 500 requests per hour (reset every 24 hours), 500 records per request.'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource doesn't exist on the server.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: The request lacks valid authentication credentials (missing or invalid X-App-Id / X-Api-Key).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The server cannot or will not process the request due to a client error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ServerError:
+      description: Server encountered an unexpected condition (500/502/503/504).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Envelope:
+      type: object
+      description: Standard UXCam Data Access API response envelope.
+      properties:
+        success:
+          type: boolean
+        data:
+          type: array
+          items:
+            type: object
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+  securitySchemes:
+    AppId:
+      type: apiKey
+      in: header
+      name: X-App-Id
+      description: App identifier from the UXCam Dashboard. The published Postman collection also documents an appid query-parameter form.
+    ApiKey:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+      description: Data Access API key from the UXCam Dashboard. The published Postman collection also documents an apikey query-parameter form.
+externalDocs:
+  description: UXCam Data Access API documentation
+  url: https://developer.uxcam.com/docs/data-access-api
