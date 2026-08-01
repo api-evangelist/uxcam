@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://status.uxcam.com + https://developer.uxcam.com
+versioning:
+  api:
+    scheme: uri-path
+    current: v2
+    example: https://api.uxcam.com/v2/session
+  sdks:
+    scheme: semver per platform SDK
+    changelogs:
+      - https://developer.uxcam.com/docs/android-sdk-changelog
+      - https://developer.uxcam.com/docs/cordova-sdk-changelog
+      - https://developer.uxcam.com/docs/flutter-sdk-changelog-flutter
+      - https://developer.uxcam.com/docs/react-native-sdk-change-log-react-native
+      - https://developer.uxcam.com/docs/xamarin-sdk-changelog
+status_page: https://status.uxcam.com
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy or RFC 8594 Sunset-header support found in
+    the developer documentation.
+sla:
+  url: null
+  notes: No public SLA page found.
+deprecated_operations: []

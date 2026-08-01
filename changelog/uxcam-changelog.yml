@@ -1,0 +1,62 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.uxcam.com/docs/android-changelog
+scheme: semver per platform SDK; dated releases. The Data Access API is versioned
+  in the URI path (v2) without a public dated changelog.
+changelogs:
+  - name: Android SDK
+    url: https://developer.uxcam.com/docs/android-changelog
+    current_version: 3.10.6
+  - name: iOS SDK
+    url: https://developer.uxcam.com/docs/ios-sdk-change-log
+    current_version: 3.8.4 (CocoaPods release 2026-07-08)
+  - name: React Native SDK
+    url: https://developer.uxcam.com/docs/react-native-sdk-change-log-react-native
+    current_version: 6.0.19 (npm)
+  - name: Flutter SDK
+    url: https://developer.uxcam.com/docs/flutter-sdk-changelog-flutter
+    current_version: 2.8.4 (pub.dev)
+  - name: Cordova SDK
+    url: https://developer.uxcam.com/docs/cordova-sdk-changelog
+    current_version: 3.8.2 (npm)
+  - name: Xamarin SDK
+    url: https://developer.uxcam.com/docs/xamarin-sdk-changelog
+    current_version: 3.5.1 (NuGet)
+entries:
+  - version: 3.10.6
+    date: '2026-07-10'
+    product: Android SDK
+    breaking: false
+    highlights:
+      - Capture content from native platform views (maps, video players, camera
+        previews) that previously appeared blank in session recordings
+      - Remove the automatic occlusion limit so all sensitive views are masked
+      - Incremental session data writes with crash recovery
+  - version: 3.10.5
+    date: '2026-06-19'
+    product: Android SDK
+    breaking: false
+    highlights:
+      - Occlusion timeline intervals for more accurate privacy coverage tracking
+      - Fix session upload stalls in WiFi-only mode on VPN-connected devices
+  - version: 3.10.4
+    date: '2026-06-16'
+    product: Android SDK
+    breaking: false
+    highlights:
+      - Resolve ANRs during SDK initialization
+      - Stream session data incrementally to reduce peak memory for long sessions
+  - version: 3.10.3
+    date: '2026-06-10'
+    product: Android SDK
+    breaking: false
+    highlights:
+      - OnSessionStopListener callback added to stopSessionAndUploadData
+      - Gesture detection in bottom sheet dialogs
+  - version: 3.10.2
+    date: '2026-05-22'
+    product: Android SDK
+    breaking: false
+    highlights:
+      - Preserve crash timeline screen history
+      - Recover cancelled session uploads

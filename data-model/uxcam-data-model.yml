@@ -1,0 +1,78 @@
+generated: '2026-07-21'
+method: derived
+source: https://developer.uxcam.com/docs/data-access-api (Sessions, Users, Events endpoint references)
+entities:
+  - name: App
+    description: A mobile or web application registered in the UXCam dashboard;
+      identified by the App ID used in the X-App-Id header.
+    key: app_id
+  - name: User
+    description: An app user tracked by the UXCam SDK, identified by UXCam's
+      internal uxcamuserid; carries property, usage, location, and device objects.
+    key: uxcamuserid
+    attributes:
+      - uxcamuserid
+      - user_name
+      - user_first_seen_on
+      - user_session_duration
+      - user_gesture_count
+      - user_custom_property
+      - device_country
+      - device_platform
+  - name: Session
+    description: A recorded usage session (optionally with video replay), the core
+      unit of UXCam session recording and analytics.
+    key: session_id
+    attributes:
+      - session_id
+      - session_duration
+      - session_crashed
+      - session_has_video
+      - session_gesture_count
+      - session_rage_gesture_count
+      - session_screen_count
+      - device_platform
+      - device_model
+      - device_country
+      - app_version
+  - name: Event
+    description: A custom or automatic event logged during a session, with custom
+      properties and the screen it occurred on.
+    key: eventId
+    attributes:
+      - event_name
+      - event_screen_name
+      - event_custom_property
+      - event_uploadedon_day
+      - device_platform
+      - session_id
+      - uxcamuserid
+relationships:
+  - from: App
+    to: Session
+    kind: has_many
+    via: app_id (X-App-Id request scope)
+  - from: App
+    to: User
+    kind: has_many
+    via: app_id (X-App-Id request scope)
+  - from: User
+    to: Session
+    kind: has_many
+    via: uxcamuserid
+  - from: Session
+    to: Event
+    kind: has_many
+    via: session_id
+  - from: User
+    to: Event
+    kind: has_many
+    via: uxcamuserid
+  - from: Event
+    to: Session
+    kind: belongs_to
+    via: session_id
+  - from: Event
+    to: User
+    kind: belongs_to
+    via: uxcamuserid

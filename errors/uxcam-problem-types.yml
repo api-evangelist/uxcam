@@ -1,0 +1,51 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.uxcam.com/docs/error-handling-and-messages
+format: http-status
+envelope:
+  description: Responses return a JSON envelope with a boolean success flag; data is
+    returned in the data array on success.
+  fields:
+    - success
+    - data
+problems:
+  - status: 400
+    title: Bad Request
+    detail: The server cannot or will not process the request due to a client error
+      (malformed filters, invalid query parameters).
+  - status: 401
+    title: Unauthorized
+    detail: The client request lacks valid authentication credentials - missing or
+      invalid X-App-Id / X-Api-Key headers.
+    remediation: Obtain the App ID and Data Access API key from the UXCam Dashboard
+      and send them as X-App-Id and X-Api-Key headers.
+  - status: 403
+    title: Forbidden
+    detail: The server understands the request but refuses to authorise it.
+  - status: 404
+    title: Not Found
+    detail: The requested resource doesn't exist in the server.
+  - status: 429
+    title: Too Many Requests
+    detail: The user has sent too many requests in a given amount of time. Limits are
+      a maximum of five concurrent requests per second, a maximum of 500 requests per
+      hour, and a maximum of 500 records fetched in a single request; the hourly limit
+      resets every 24 hours.
+    remediation: Combine multiple filters, groupings, and aggregations into a single
+      request instead of making multiple queries.
+  - status: 500
+    title: Internal Server Error
+    detail: Server encountered an unexpected condition that prevented it from fulfilling
+      the request.
+  - status: 502
+    title: Bad Gateway
+    detail: Server encountered an unexpected condition that prevented it from fulfilling
+      the request.
+  - status: 503
+    title: Service Unavailable
+    detail: Server encountered an unexpected condition that prevented it from fulfilling
+      the request.
+  - status: 504
+    title: Gateway Timeout
+    detail: Server encountered an unexpected condition that prevented it from fulfilling
+      the request.

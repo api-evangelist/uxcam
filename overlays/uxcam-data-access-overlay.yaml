@@ -1,0 +1,35 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the UXCam Data Access API
+  version: 1.0.0
+  x-apievangelist:
+    generated: '2026-07-21'
+    method: generated
+    source: openapi/uxcam-data-access-openapi.yml
+extends: openapi/uxcam-data-access-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-artifacts:
+        authentication: authentication/uxcam-authentication.yml
+        conventions: conventions/uxcam-conventions.yml
+        errors: errors/uxcam-problem-types.yml
+        data-model: data-model/uxcam-data-model.yml
+        mcp: mcp/uxcam-mcp.yml
+        postman: postman/uxcam-data-access-v2-postman.json
+  - target: $.info
+    update:
+      x-rate-limits:
+        concurrent_requests_per_second: 5
+        requests_per_hour: 500
+        max_records_per_request: 500
+        reset: every 24 hours
+  - target: $.paths['/session'].get
+    update:
+      x-use-cases:
+        - Pull sessions with rage gestures or crashes for UX triage
+        - Feed session replays into product analytics warehouses
+  - target: $.paths['/event/analytics'].get
+    update:
+      x-use-cases:
+        - Track custom event conversion by day, screen, or user property

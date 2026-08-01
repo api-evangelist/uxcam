@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+docs: https://developer.uxcam.com/docs/data-access-api
+summary:
+  types:
+    - apiKey
+  api_key_in:
+    - header
+  oauth2_flows: []
+schemes:
+  - name: AppId
+    type: apiKey
+    in: header
+    parameter: X-App-Id
+    description: Identifier for the app created in the UXCam Dashboard; required on
+      every Data Access API request.
+  - name: ApiKey
+    type: apiKey
+    in: header
+    parameter: X-Api-Key
+    description: Randomly generated authentication key issued from the UXCam
+      Dashboard; validates UXCam Data Access API requests only.
+notes: The Data Access API (https://api.uxcam.com/v2) authenticates with the
+  X-App-Id + X-Api-Key header pair. The mobile/web SDKs are configured with a
+  separate app key at SDK initialization; no OAuth surface is published.

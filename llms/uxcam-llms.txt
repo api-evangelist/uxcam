@@ -1,0 +1,167 @@
+# UXCam Documentation Documentation
+
+> Documentation for UXCam Documentation
+
+## Guides
+- [What is UXCam?](https://developer.uxcam.com/docs/what-is-uxcam.md): Understanding session recording, heatmaps, and user analytics
+- [Quick Start - Android](https://developer.uxcam.com/docs/quick-start-android.md): Get UXCam running in your Android app in 5 minutes
+- [Quick Start - iOS](https://developer.uxcam.com/docs/quick-start-ios.md): Get UXCam running in your iOS app in 5 minutes
+- [Quick Start - React Native](https://developer.uxcam.com/docs/quick-start-react-native.md): Get UXCam running in your React Native app in 5 minutes
+- [Quick Start - Flutter](https://developer.uxcam.com/docs/quick-start-flutter.md): Get UXCam running in your Flutter app in 5 minutes
+- [Quick Start - Web](https://developer.uxcam.com/docs/quick-start-web.md): Get UXCam running on your website in 5 minutes
+- [Quick Start - Cordova](https://developer.uxcam.com/docs/quick-start-cordova.md): Get UXCam running in your Cordova app in 5 minutes
+- [So What Does UXCam Do?](https://developer.uxcam.com/docs/so-what-does-uxcam-do.md): Let's Understand What UXCam Is Before Integrating It, Right?
+- [How Session Recording Works](https://developer.uxcam.com/docs/how-session-recording-works.md): Technical overview of UXCam's screen capture and session reconstruction
+- [Privacy and Compliance](https://developer.uxcam.com/docs/privacy-and-compliance.md): GDPR, CCPA, consent management, and data handling
+- [Understanding Occlusion](https://developer.uxcam.com/docs/understanding-occlusion.md): How to protect sensitive data in session recordings
+- [Android SDK Integration Guide](https://developer.uxcam.com/docs/android.md): How to Get Started with UXCam for Android
+- [Initialize SDK and Start Recording](https://developer.uxcam.com/docs/initialise-sdk-and-start-recording-android.md): Implement the SDK and record your first session.
+- [Tagging Screens](https://developer.uxcam.com/docs/screen-tagging.md): Configure automatic and manual screen tagging to unlock heat‑maps, funnels and journey analytics.
+- [Fragment-Based Screen Tagging](https://developer.uxcam.com/docs/fragment-based-tagging-android.md): How fragment screens appear in the UXCam timeline
+- [Jetpack Compose Screen Tagging](https://developer.uxcam.com/docs/jetpack-compose-screen-tagging-1-android.md): Tag Jetpack Compose screens for heatmaps and journey analytics
+- [Tagging Screens Inside Webviews](https://developer.uxcam.com/docs/tagging-screens-inside-webviews-android.md)
+- [Mask PII & Sensitive Content](https://developer.uxcam.com/docs/sensitive-data-occlusion.md): Protect your users’ privacy before the first session hits the dashboard.
+- [Jetpack Compose Occlusion](https://developer.uxcam.com/docs/jetpack-compose-occlussion-android.md): Occlude sensitive Jetpack Compose composables from session recordings
+- [Occlude PII Data Within Webviews](https://developer.uxcam.com/docs/occlude-pii-data-within-webviews-android.md)
+- [Custom User Properties](https://developer.uxcam.com/docs/user-properties.md): Identify users and attach custom properties to sessions in your Android app
+- [Custom Events and Properties](https://developer.uxcam.com/docs/events.md): Track custom events and attach properties to analyze user actions in your Android app
+- [Advanced Configuration and APIs](https://developer.uxcam.com/docs/advanced-configuration-and-apis.md): Advanced Flutter SDK features for power users and complex integrations
+- [Control Recording](https://developer.uxcam.com/docs/control-recording-android.md)
+- [Pause and Resume Video Recording](https://developer.uxcam.com/docs/pause-and-resume-video-recording-android.md)
+- [Opt-in / Opt-out](https://developer.uxcam.com/docs/opt-in-opt-out-android.md)
+- [Crashes & ANRs](https://developer.uxcam.com/docs/crashes-anrs-android.md)
+- [Integration Logging Guide for Developers](https://developer.uxcam.com/docs/integration-logging-guide-for-developers-copy-android.md)
+- [Report Handled Exceptions](https://developer.uxcam.com/docs/report-handled-exceptions-1-android.md)
+- [Android SDK Changelog](https://developer.uxcam.com/docs/android-sdk-changelog.md)
+- [Android Troubleshooting Guide](https://developer.uxcam.com/docs/troubleshooting-android.md): Common issues and solutions for UXCam Android SDK integration
+- [iOS SDK Integration Guide](https://developer.uxcam.com/docs/ios.md): How to Get Started with UXCam for iOS
+- [SwiftUI UXCam package](https://developer.uxcam.com/docs/swiftui-ios.md): Set up the dedicated UXCam SwiftUI SDK and start recording sessions
+- [Tagging Screens](https://developer.uxcam.com/docs/screen-tagging-ios.md): Tag screens automatically or manually to unlock heatmaps and journey analytics in iOS
+- [SwiftUI Automatic Screen Tagging](https://developer.uxcam.com/docs/automatic-screen-tagging-swiftui-ios.md): Automatically capture screen names from SwiftUI navigation titles and tab items
+- [Tagging Screens Inside Webviews](https://developer.uxcam.com/docs/tagging-screens-inside-webviews-1-ios.md)
+- [Mask PII & Sensitive Content](https://developer.uxcam.com/docs/sensitive-data-occlusion-ios.md): Hide sensitive data and PII from session recordings in your iOS app
+- [Occlude PII Data Within Webviews](https://developer.uxcam.com/docs/occlude-pii-data-within-webviews-1-ios.md)
+- [Custom User Properties](https://developer.uxcam.com/docs/user-properties-ios.md): Identify users and attach custom properties to sessions in your iOS app
+- [Custom Events and Properties](https://developer.uxcam.com/docs/events-ios.md): Track custom events and attach properties to analyze user actions in your iOS app
+- [Advanced Configuration and APIs](https://developer.uxcam.com/docs/advanced-configuration-and-apis-1.md)
+- [Control Recording](https://developer.uxcam.com/docs/control-recording-copy-1-ios.md)
+- [Crash Symbolication](https://developer.uxcam.com/docs/crash-symbolication-ios.md)
+- [Crashes & ANRs](https://developer.uxcam.com/docs/crashes-anrs-copy-ios.md)
+- [Integration Logging Guide for Developers](https://developer.uxcam.com/docs/integration-logging-guide-for-developers-copy-1-ios.md)
+- [Opt-in / Opt-out](https://developer.uxcam.com/docs/opt-in-opt-out-copy-ios.md)
+- [Pause and Resume Video Recording](https://developer.uxcam.com/docs/pause-and-resume-video-recording-copy-ios.md)
+- [Report Handled Exceptions](https://developer.uxcam.com/docs/report-handled-exceptions-copy-ios.md)
+- [iOS SDK Changelog](https://developer.uxcam.com/docs/ios-sdk-change-log.md)
+- [iOS Troubleshooting Guide](https://developer.uxcam.com/docs/troubleshooting-ios.md): Common issues and solutions for UXCam iOS SDK integration
+- [React Native SDK Integration Guide](https://developer.uxcam.com/docs/react-native.md): Install and configure the UXCam React Native SDK, from setup to your first recorded session
+- [Expo Installation](https://developer.uxcam.com/docs/expo-installation-react-native.md): This is a quick guide on how to integrate UXCam into your Expo application.
+- [Tagging Screens](https://developer.uxcam.com/docs/screen-tagging-react-native.md): Tag screens automatically or manually to unlock heatmaps and journey analytics in React Native
+- [React Navigation & Wix Integration](https://developer.uxcam.com/docs/react-navigation-tagging-react-native.md)
+- [WebView Screen Tagging](https://developer.uxcam.com/docs/tagging-webviews-react-native.md)
+- [Mask PII & Sensitive Content](https://developer.uxcam.com/docs/sensitive-data-occlusion-react-native.md): Hide sensitive data and PII from session recordings in your React Native app
+- [Occlude PII Data within Webviews](https://developer.uxcam.com/docs/occlude-pii-data-within-webviews-2-react-native.md)
+- [View Level Occlusion](https://developer.uxcam.com/docs/view-level-occlusion-react-native.md)
+- [Custom User Properties](https://developer.uxcam.com/docs/user-properties-react-native.md): Identify users and attach custom properties to sessions in your React Native app
+- [Custom Events and Properties](https://developer.uxcam.com/docs/events-react-native.md): Track custom events and attach properties to analyze user actions in your React Native app
+- [Advanced Configuration and APIs](https://developer.uxcam.com/docs/advanced-configuration-and-apis-2.md)
+- [Control Recording](https://developer.uxcam.com/docs/control-recording-2-react-native.md)
+- [Pause & Resume Recording](https://developer.uxcam.com/docs/pause-and-resume-react-native.md)
+- [Crashes and ANRs](https://developer.uxcam.com/docs/crashes-and-anrs-react-native.md)
+- [Report Handled Exceptions](https://developer.uxcam.com/docs/report-handled-exceptions-react-native.md)
+- [Opt-in / Opt-out Your Users](https://developer.uxcam.com/docs/opt-in-opt-out-your-users-react-native.md)
+- [Integration Logging](https://developer.uxcam.com/docs/integration-logging-react-native.md)
+- [React Native SDK Changelog](https://developer.uxcam.com/docs/react-native-sdk-change-log-react-native.md)
+- [Troubleshooting React Native UXCam](https://developer.uxcam.com/docs/troubleshooting-react-native-uxcam-react-native.md)
+- [Flutter SDK Integration Guide](https://developer.uxcam.com/docs/flutter.md): Complete Flutter UXCam integration with session analytics and user insights
+- [Screen Tagging](https://developer.uxcam.com/docs/screen-tagging-flutter.md): Tag screens automatically or manually to unlock heatmaps and journey analytics in Flutter
+- [Navigator Route Tracking](https://developer.uxcam.com/docs/navigator-route-tracking-flutter.md): Comprehensive screen analytics using Flutter's navigation system
+- [Sensitive Data Occlusion In Flutter Apps](https://developer.uxcam.com/docs/sensitive-data-occlusion-flutter.md): Hide sensitive data and PII from session recordings in your Flutter app
+- [Custom User Properties](https://developer.uxcam.com/docs/user-properties-flutter.md): Identify users and attach custom properties to sessions in your Flutter app
+- [Custom Events and Properties](https://developer.uxcam.com/docs/events-flutter.md): Track custom events and attach properties to analyze user actions in your Flutter app
+- [Advanced Configuration and APIs](https://developer.uxcam.com/docs/advanced-configuration-and-apis.md): Advanced Flutter SDK features for power users and complex integrations
+- [Control Recording](https://developer.uxcam.com/docs/control-recording-flutter.md): Programmatically control UXCam session recording in Flutter apps
+- [Crash and ANR Handling](https://developer.uxcam.com/docs/crashes-and-anrs-flutter.md): Comprehensive error tracking and crash reporting for Flutter apps
+- [Opt-in / Opt-out](https://developer.uxcam.com/docs/opt-in-opt-out-flutter.md): Implement GDPR/CCPA compliant opt-in/opt-out flows in Flutter
+- [Integration Logging & Debug Guide](https://developer.uxcam.com/docs/integration-logging-guide-flutter.md): Debug and validate your UXCam Flutter SDK integration
+- [Troubleshooting FAQs](https://developer.uxcam.com/docs/troubleshooting-faqs-flutter.md): Solutions to common UXCam Flutter SDK integration issues
+- [Flutter SDK Changelog](https://developer.uxcam.com/docs/flutter-sdk-changelog-flutter.md)
+- [Flutter Web Platform Support](https://developer.uxcam.com/docs/flutter-web-platform-support.md): What's supported on Flutter Web and how it compares to mobile
+- [Flutter Troubleshooting Guide](https://developer.uxcam.com/docs/troubleshooting-flutter.md): Common issues and solutions for UXCam Flutter SDK integration
+- [Cordova](https://developer.uxcam.com/docs/cordova.md): Install and initialize UXCam in a Cordova, Ionic, or Capacitor project.
+- [Screen Tagging](https://developer.uxcam.com/docs/screen-tagging-cordova.md): Tag screens automatically or manually to unlock heatmaps and journey analytics in Cordova
+- [Sensitive Data Occlusion In Cordova Apps](https://developer.uxcam.com/docs/sensitive-data-occlusion-cordova.md): Hide sensitive data and PII from session recordings in your Cordova app
+- [Custom User Properties](https://developer.uxcam.com/docs/user-properties-cordova.md): Identify users and attach custom properties to sessions in your Cordova app
+- [Custom Events and Properties](https://developer.uxcam.com/docs/events-cordova.md): Track custom events and attach properties to analyze user actions in your Cordova app
+- [Cordova SDK Changelog](https://developer.uxcam.com/docs/cordova-sdk-changelog.md)
+- [Cordova Troubleshooting Guide](https://developer.uxcam.com/docs/troubleshooting-cordova.md): Common issues and solutions for UXCam Cordova plugin integration
+- [Xamarin - MAUI](https://developer.uxcam.com/docs/xamarin-maui.md): Install and configure the UXCam Xamarin / MAUI SDK, from setup to your first recorded session
+- [Screen Tagging](https://developer.uxcam.com/docs/screen-tagging-copy-xamarin-maui.md): Tag screens automatically or manually to unlock heatmaps and journey analytics in Xamarin / MAUI
+- [Sensitive Data Occlusion In Xamarin / MAUI Apps](https://developer.uxcam.com/docs/sensitive-data-occlusion-in-xamarin-maui-apps.md): Hide sensitive data and PII from session recordings in your Xamarin / MAUI app
+- [Custom User Properties](https://developer.uxcam.com/docs/user-properties-xamarin-maui.md): Identify users and attach custom properties to sessions in your Xamarin / MAUI app
+- [Custom Events and Properties](https://developer.uxcam.com/docs/events-xamarin-maui.md): Track custom events and attach properties to analyze user actions in your Xamarin / MAUI app
+- [Xamarin/MAUI SDK Changelog](https://developer.uxcam.com/docs/xamarin-sdk-changelog.md)
+- [Xamarin/MAUI Troubleshooting Guide](https://developer.uxcam.com/docs/troubleshooting-xamarin.md): Common issues and solutions for UXCam Xamarin and .NET MAUI integration
+- [Nativescript](https://developer.uxcam.com/docs/nativescript.md): Install and configure the UXCam NativeScript SDK, from setup to your first recorded session
+- [Screen Tagging](https://developer.uxcam.com/docs/screen-tagging-nativescript.md): Tag screens automatically or manually to unlock heatmaps and journey analytics in NativeScript
+- [Sensitive Data Occlusion In Nativescript Apps](https://developer.uxcam.com/docs/sensitive-data-occlusion-nativescript.md): Hide sensitive data and PII from session recordings in your NativeScript app
+- [Custom User Properties](https://developer.uxcam.com/docs/user-properties-nativescript.md): Identify users and attach custom properties to sessions in your NativeScript app
+- [Custom Events and Properties](https://developer.uxcam.com/docs/events-nativescript.md): Track custom events and attach properties to analyze user actions in your NativeScript app
+- [NativeScript SDK Changelog](https://developer.uxcam.com/docs/nativescript-sdk-changelog.md)
+- [NativeScript Troubleshooting Guide](https://developer.uxcam.com/docs/troubleshooting-nativescript.md): Common issues and solutions for UXCam NativeScript plugin integration
+- [Web Installation](https://developer.uxcam.com/docs/installation.md)
+- [HTML Code Snippet](https://developer.uxcam.com/docs/html-code-snippet.md)
+- [Google Tag Manager](https://developer.uxcam.com/docs/google-tag-manager-1.md)
+- [Shopify](https://developer.uxcam.com/docs/shopify-1.md)
+- [Wordpress](https://developer.uxcam.com/docs/wordpress-1.md)
+- [Flutter Web](https://developer.uxcam.com/docs/flutter-web.md)
+- [Setup & Configuration](https://developer.uxcam.com/docs/setup-configuration.md)
+- [Occlusion - Hide Sensitive Data](https://developer.uxcam.com/docs/occlusion-hide-sensitive-data.md)
+- [Define Pages & Properties](https://developer.uxcam.com/docs/define-pages-properties.md)
+- [Setting User Properties](https://developer.uxcam.com/docs/setting-user-properties.md)
+- [Logging Custom Events](https://developer.uxcam.com/docs/logging-custom-events.md)
+- [Iframe Recording](https://developer.uxcam.com/docs/iframe-recording.md)
+- [Configure Content Security Policy (CSP)](https://developer.uxcam.com/docs/configure-content-security-policy-csp.md)
+- [Define App Version (Optional)](https://developer.uxcam.com/docs/define-app-version-optional.md)
+- [Example](https://developer.uxcam.com/docs/example.md)
+- [FAQ](https://developer.uxcam.com/docs/faq.md)
+- [Troubleshooting](https://developer.uxcam.com/docs/troubleshooting.md)
+- [Sessions Endpoint](https://developer.uxcam.com/docs/sessions.md): Query and export session data via REST API
+- [Users Endpoint](https://developer.uxcam.com/docs/users.md): Query and export user data via REST API
+- [Events Endpoint](https://developer.uxcam.com/docs/events-endpoint.md): Query and export event data via REST API
+- [Query Parameters](https://developer.uxcam.com/docs/api-query-parameters.md): Filtering, pagination, and aggregation options for the Data Access API
+- [Error Handling](https://developer.uxcam.com/docs/error-handling.md): HTTP status codes and error messages
+- [Send User Properties](https://developer.uxcam.com/docs/send-user-properties.md): API reference for identifying users and setting custom properties
+- [Send Events and Properties](https://developer.uxcam.com/docs/send-events.md): API reference for logging custom events in session recordings
+- [Webview Tagging](https://developer.uxcam.com/docs/web-view-tagging.md)
+- [SwiftUI Automatic Screen Tagging](https://developer.uxcam.com/docs/swiftui-automatic-screen-tagging.md)
+- [Sensitive Data Occlusion and Screen Blurring](https://developer.uxcam.com/docs/screen-blurring.md): API reference for hiding sensitive data in session recordings
+- [Jetpack Compose Occlusion](https://developer.uxcam.com/docs/jetpack-compose-occlusion.md)
+- [Control Recording](https://developer.uxcam.com/docs/control-recording.md)
+- [Pause and Resume Video Recording](https://developer.uxcam.com/docs/pause-and-resume-recording.md)
+- [Control Crash Handling](https://developer.uxcam.com/docs/control-crash-handling.md)
+- [Report Handled Exceptions](https://developer.uxcam.com/docs/report-handled-exceptions.md)
+- [Integration Logging Guide for Developers](https://developer.uxcam.com/docs/integration-logging-guide-for-developers.md)
+- [Data Access API](https://developer.uxcam.com/docs/data-access-api.md)
+- [Users](https://developer.uxcam.com/docs/users-1.md)
+- [Sessions](https://developer.uxcam.com/docs/sessions-1.md)
+- [Events](https://developer.uxcam.com/docs/events-1.md)
+- [Segment](https://developer.uxcam.com/docs/segment.md)
+- [Amplitude](https://developer.uxcam.com/docs/amplitude.md)
+- [Firebase Crashlytics](https://developer.uxcam.com/docs/firebase-crashlytics.md)
+- [Firebase Google Analytics](https://developer.uxcam.com/docs/firebase-google-analytics.md)
+- [Intercom](https://developer.uxcam.com/docs/intercom.md)
+- [Mixpanel](https://developer.uxcam.com/docs/mixpanel.md)
+- [Salesforce](https://developer.uxcam.com/docs/salesforce.md)
+- [Other 3rd party integrations](https://developer.uxcam.com/docs/other-3rd-party-integrations.md)
+- [Android SDK Changelog](https://developer.uxcam.com/docs/android-changelog.md): Release history and version notes for the UXCam Android SDK
+- [iOS SDK Changelog](https://developer.uxcam.com/docs/ios-changelog.md): Release history and version notes for the UXCam iOS SDK
+- [React Native SDK Changelog](https://developer.uxcam.com/docs/react-native-changelog.md): Release history and version notes for the UXCam React Native SDK
+- [Flutter](https://developer.uxcam.com/docs/flutter-changelog.md)
+- [Cordova](https://developer.uxcam.com/docs/cordova-changelog.md)
+- [Xamarin - MAUI](https://developer.uxcam.com/docs/xamarin-changelog.md)
+- [Nativescript](https://developer.uxcam.com/docs/nativescript-changelog.md)
+- [AI Integration](https://developer.uxcam.com/docs/mcp.md)
+
+## Pages
+- [MDX Components Test Page](https://developer.uxcam.com/mdx-components-test.md)
+- [Test custom page](https://developer.uxcam.com/test-custom-page.md)

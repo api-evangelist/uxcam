@@ -1,0 +1,18 @@
+{
+  "provider": "uxcam",
+  "sources": [
+    "uxcam-events-api-openapi.yml",
+    "uxcam-sessions-api-openapi.yml",
+    "uxcam-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "uxcam-events-api-openapi.yml",
+    "uxcam-sessions-api-openapi.yml",
+    "uxcam-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

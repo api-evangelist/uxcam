@@ -1,0 +1,62 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.uxcam.com/docs/data-access-api
+authentication:
+  style: api-key-headers
+  headers:
+    - X-App-Id
+    - X-Api-Key
+  notes: App ID and a Data Access API key are issued per app from the UXCam Dashboard;
+    the key validates UXCam Data Access APIs only. See authentication/uxcam-authentication.yml.
+idempotency:
+  supported: false
+  notes: The Data Access API is read-only (GET); no idempotency-key header is
+    documented and none is needed for the retrieval surface.
+pagination:
+  style: page-offset
+  request_params:
+    - name: page
+      type: integer
+      description: Page number (1-indexed), default 1
+    - name: page_size
+      type: integer
+      description: Results per page, default 50, max 1000
+  notes: A total of 500 records can be fetched in a single request under the
+    documented rate-limit caps.
+filtering:
+  param: filters
+  structure: JSON array of {attribute, operator, value} objects
+  operators:
+    - equal
+    - not_equal
+    - in
+    - not_in
+    - greater_than
+    - less_than
+    - between_dates
+  date_format: ISO 8601 (e.g. 2024-01-01T00:00:00Z)
+aggregation:
+  group_by: JSON array of {attribute, max_group_number} objects (analytics endpoints)
+  aggregation_param: aggregation (e.g. session_count, avg_session_duration)
+  comparison: comparison=1 compares current period against the previous period
+request_format: form-encoded query parameters (REST, GET)
+response_format:
+  media_type: application/json
+  envelope:
+    success: boolean
+    data: array
+versioning:
+  scheme: uri-path
+  current: v2
+  example: https://api.uxcam.com/v2/session
+error_envelope: see errors/uxcam-problem-types.yml
+rate_limits:
+  concurrent_requests_per_second: 5
+  requests_per_hour: 500
+  max_records_per_request: 500
+  reset: every 24 hours
+  signaling: HTTP 429 Too Many Requests
+cross_links:
+  errors: errors/uxcam-problem-types.yml
+  authentication: authentication/uxcam-authentication.yml
+  lifecycle: lifecycle/uxcam-lifecycle.yml

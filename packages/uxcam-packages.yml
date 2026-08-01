@@ -1,0 +1,75 @@
+generated: '2026-07-21'
+method: searched
+source: registry search (npm, pub.dev, CocoaPods, NuGet, sdk.uxcam.com maven) + github.com/uxcam
+packages:
+  - language: swift-objc
+    platform: iOS
+    registry: cocoapods
+    name: UXCam
+    version: 3.8.4
+    url: https://cocoapods.org/pods/UXCam
+    install: pod 'UXCam'
+    source: https://github.com/uxcam/uxcam-ios-sdk
+    official: true
+  - language: java-kotlin
+    platform: Android
+    registry: maven (sdk.uxcam.com)
+    name: com.uxcam:uxcam
+    version: 3.10.6
+    url: https://sdk.uxcam.com/android/com/uxcam/uxcam/maven-metadata.xml
+    install: "maven { url 'https://sdk.uxcam.com/android/' } / implementation 'com.uxcam:uxcam:3.+'"
+    official: true
+  - language: javascript
+    platform: React Native
+    registry: npm
+    name: react-native-ux-cam
+    version: 6.0.19
+    url: https://www.npmjs.com/package/react-native-ux-cam
+    install: npm install react-native-ux-cam
+    source: https://github.com/uxcam/react-native-ux-cam
+    official: true
+  - language: dart
+    platform: Flutter
+    registry: pub.dev
+    name: flutter_uxcam
+    version: 2.8.4
+    url: https://pub.dev/packages/flutter_uxcam
+    install: "flutter pub add flutter_uxcam"
+    source: https://github.com/uxcam/flutter-plugin
+    official: true
+  - language: javascript
+    platform: Cordova
+    registry: npm
+    name: cordova-uxcam
+    version: 3.8.2
+    url: https://www.npmjs.com/package/cordova-uxcam
+    install: cordova plugin add cordova-uxcam
+    source: https://github.com/uxcam/cordova-uxcam
+    official: true
+  - language: javascript
+    platform: NativeScript
+    registry: npm
+    name: nativescript-uxcam
+    version: 1.0.5
+    url: https://www.npmjs.com/package/nativescript-uxcam
+    install: ns plugin add nativescript-uxcam
+    source: https://github.com/uxcam/nativescript-uxcam
+    official: true
+  - language: csharp
+    platform: Xamarin / .NET MAUI
+    registry: nuget
+    name: UXCam
+    version: 3.5.1
+    url: https://www.nuget.org/packages/UXCam
+    install: dotnet add package UXCam
+    official: true
+  - language: csharp
+    platform: Unity
+    registry: github
+    name: uxcam-unity
+    url: https://github.com/uxcam/uxcam-unity
+    official: true
+    notes: Native wrapper for Unity distributed from the GitHub org, not a package registry.
+notes: The Web SDK is delivered as a JavaScript snippet from the UXCam dashboard
+  (no public npm package found). UXCamDotNet on NuGet was found but first-party
+  status could not be confirmed, so it is excluded.

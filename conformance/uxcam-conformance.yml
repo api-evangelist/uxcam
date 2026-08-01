@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: derived
+source: https://developer.uxcam.com/docs/data-access-api + docs privacy/compliance pages
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: Data Access API authenticates with X-App-Id/X-Api-Key headers; no
+      OAuth 2.0 surface is published.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration returns 404 on uxcam.com,
+      developer.uxcam.com, and api.uxcam.com.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors are signaled with standard HTTP status codes and a
+      success/data JSON envelope, not application/problem+json.
+  - id: pagination
+    conforms: true
+    evidence: page / page_size (default 50, max 1000) pagination documented across
+      the session, user, and event endpoints.
+  - id: idempotency
+    conforms: false
+    evidence: Read-only GET API; no idempotency-key contract documented.
+  - id: rfc9116-security-txt
+    conforms: true
+    evidence: https://uxcam.com/.well-known/security.txt published with Contact,
+      Policy, and Expires fields (see well-known/uxcam-security.txt).
+  - id: iso8601-dates
+    conforms: true
+    evidence: Timestamps and between_dates filters use ISO 8601 format
+      (2024-01-01T00:00:00Z).
+  - id: gdpr
+    conforms: true
+    evidence: Docs ship a dedicated privacy-and-compliance section with sensitive
+      data occlusion, screen blurring, and opt-in/opt-out controls
+      (https://developer.uxcam.com/docs/privacy-and-compliance).
+  - id: scim
+    conforms: false
+  - id: json:api
+    conforms: false
+  - id: odata
+    conforms: false

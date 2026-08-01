@@ -1,20 +1,98 @@
 aid: uxcam
 name: UXCam
-description: UXCam is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: UXCam is a mobile-first product analytics and session replay platform
+  that helps product, UX, and engineering teams understand how people actually use
+  their apps. SDKs for Android, iOS, React Native, Flutter, Cordova, Xamarin/MAUI,
+  NativeScript, and the web capture session recordings, heatmaps, gestures, crashes,
+  and custom events with built-in PII occlusion, while the Data Access API exposes
+  session, user, and event analytics programmatically and an official MCP server
+  guides agent-driven SDK integration.
 url: https://raw.githubusercontent.com/api-evangelist/uxcam/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: enrichment-pipeline
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://github.com/uxcam.png
 tags:
 - Company
-apis: []
+- Product Analytics
+- Session Replay
+- Mobile Analytics
+- Heatmaps
+- User Experience
+- Crash Reporting
+apis:
+- aid: uxcam:uxcam-events-api
+  name: UXCam Events API
+  description: Custom and automatic events logged during sessions
+  humanURL: https://developer.uxcam.com/docs/data-access-api
+  baseURL: https://api.uxcam.com/v2
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/uxcam-events-api-openapi.yml
+  - type: Documentation
+    url: https://developer.uxcam.com/docs/data-access-api
+  - type: APIReference
+    url: https://developer.uxcam.com/docs/sessions
+  - type: Postman
+    url: https://documenter.getpostman.com/view/9127779/2s935it5r2
+  - type: ErrorCatalog
+    url: errors/uxcam-problem-types.yml
+- aid: uxcam:uxcam-sessions-api
+  name: UXCam Sessions API
+  description: Recorded usage sessions (qualitative list + quantitative analytics)
+  humanURL: https://developer.uxcam.com/docs/data-access-api
+  baseURL: https://api.uxcam.com/v2
+  tags:
+  - Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/uxcam-sessions-api-openapi.yml
+  - type: Documentation
+    url: https://developer.uxcam.com/docs/data-access-api
+  - type: APIReference
+    url: https://developer.uxcam.com/docs/sessions
+  - type: Postman
+    url: https://documenter.getpostman.com/view/9127779/2s935it5r2
+  - type: ErrorCatalog
+    url: errors/uxcam-problem-types.yml
+- aid: uxcam:uxcam-users-api
+  name: UXCam Users API
+  description: App users tracked by the UXCam SDK
+  humanURL: https://developer.uxcam.com/docs/data-access-api
+  baseURL: https://api.uxcam.com/v2
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/uxcam-users-api-openapi.yml
+  - type: Documentation
+    url: https://developer.uxcam.com/docs/data-access-api
+  - type: APIReference
+    url: https://developer.uxcam.com/docs/sessions
+  - type: Postman
+    url: https://documenter.getpostman.com/view/9127779/2s935it5r2
+  - type: ErrorCatalog
+    url: errors/uxcam-problem-types.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +101,70 @@ maintainers:
 common:
 - type: Website
   url: https://uxcam.com
+- type: DeveloperPortal
+  url: https://developer.uxcam.com
+- type: Documentation
+  url: https://developer.uxcam.com
+- type: APIReference
+  url: https://developer.uxcam.com/docs/data-access-api
+- type: GettingStarted
+  url: https://developer.uxcam.com/docs/what-is-uxcam
+- type: Support
+  url: https://help.uxcam.com
+- type: Blog
+  url: https://uxcam.com/blog
+- type: GitHubOrganization
+  url: https://github.com/uxcam
+- type: Pricing
+  url: https://uxcam.com/pricing
+- type: SignUp
+  url: https://app.uxcam.com/signup
+- type: TermsOfService
+  url: https://help.uxcam.com/en/articles/10222767-terms-and-conditions
+- type: PrivacyPolicy
+  url: https://uxcam.com/privacy-policy
+- type: StatusPage
+  url: https://status.uxcam.com
+- type: Postman
+  url: https://documenter.getpostman.com/view/9127779/2s935it5r2
+- type: PostmanCollection
+  url: postman/uxcam-data-access-v2-postman.json
+- type: ChangeLog
+  url: changelog/uxcam-changelog.yml
+- type: MCPServer
+  url: mcp/uxcam-mcp.yml
+- type: LLMsTxt
+  url: llms/uxcam-llms.txt
+- type: Packages
+  url: packages/uxcam-packages.yml
+- type: SDKs
+  url: packages/uxcam-packages.yml
+- type: WellKnown
+  url: well-known/uxcam-well-known.yml
+- type: SecurityTxt
+  url: well-known/uxcam-security.txt
+- type: Authentication
+  url: authentication/uxcam-authentication.yml
+- type: Conventions
+  url: conventions/uxcam-conventions.yml
+- type: ErrorCatalog
+  url: errors/uxcam-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/uxcam-lifecycle.yml
+- type: Conformance
+  url: conformance/uxcam-conformance.yml
+- type: DataModel
+  url: data-model/uxcam-data-model.yml
+- type: DomainSecurity
+  url: security/uxcam-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/uxcam-vulnerability-disclosure.yml
+- type: Security
+  url: https://uxcam.com/bug-bounty
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v1

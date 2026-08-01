@@ -1,0 +1,15 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: uxcam-triage-problem-sessions.md
+    name: Triage problem sessions in UXCam
+    api: openapi/uxcam-data-access-openapi.yml
+    operations: [listSessions, analyzeSessions]
+  - file: uxcam-analyze-user-cohorts.md
+    name: Analyze user cohorts in UXCam
+    api: openapi/uxcam-data-access-openapi.yml
+    operations: [listUsers, analyzeUsers]
+  - file: uxcam-export-event-analytics.md
+    name: Export event analytics from UXCam
+    api: openapi/uxcam-data-access-openapi.yml
+    operations: [listEvents, analyzeEvents]
