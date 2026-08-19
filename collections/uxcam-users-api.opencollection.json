@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UXCam Data Access Events Users API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-App-Id",
+      "value": "{{X-App-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uxcam.com/v2/user",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (1-indexed). Default 1."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Results per page. Default 50, maximum 1000; rate limits cap a single request at 500 fetched records."
+              },
+              {
+                "name": "filters",
+                "value": "",
+                "type": "query",
+                "description": "JSON array of filter objects: {\"attribute\", \"operator\", \"value\"}. Operators: equal, not_equal, in, not_in, greater_than, less_than, between_dates. Dates use ISO 8601."
+              }
+            ]
+          },
+          "docs": "Retrieve user records with property, usage, location, and device objects."
+        },
+        {
+          "info": {
+            "name": "Aggregate user analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uxcam.com/v2/user/analytics",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (1-indexed). Default 1."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Results per page. Default 50, maximum 1000; rate limits cap a single request at 500 fetched records."
+              },
+              {
+                "name": "filters",
+                "value": "",
+                "type": "query",
+                "description": "JSON array of filter objects: {\"attribute\", \"operator\", \"value\"}. Operators: equal, not_equal, in, not_in, greater_than, less_than, between_dates. Dates use ISO 8601."
+              },
+              {
+                "name": "group_by",
+                "value": "",
+                "type": "query",
+                "description": "JSON array of grouping objects: {\"attribute\", \"max_group_number\"} (analytics endpoints only)."
+              },
+              {
+                "name": "aggregation",
+                "value": "",
+                "type": "query",
+                "description": "JSON array of aggregation objects, e.g. {\"attribute\": \"session_duration\", \"operator\": \"max\"}."
+              },
+              {
+                "name": "comparison",
+                "value": "",
+                "type": "query",
+                "description": "Set to 1 to compare the current period against the previous period."
+              }
+            ]
+          },
+          "docs": "Aggregated user metrics such as user_count and avg_user_session_duration, with filters, group_by, aggregation, and comparison."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

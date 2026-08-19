@@ -9,28 +9,36 @@ server:
   headers:
     Accept: application/json, text/event-stream
     Content-Type: application/json
-  authentication: No OAuth or API-key handshake at connect time; the UXCam app key
-    (from the dashboard) is supplied during the integration workflow itself.
+  authentication: No OAuth or API-key handshake at connect time; the UXCam app key (from the dashboard)
+    is supplied during the integration workflow itself.
 clients:
-  - Cursor
-  - Windsurf
-  - Claude Desktop
-  - Claude CLI
+- Cursor
+- Windsurf
+- Claude Desktop
+- Claude CLI
 platforms:
-  - Android (Kotlin/Java)
-  - iOS (Swift/Objective-C)
-  - Flutter
-  - React Native
-notes: Guided SDK-integration server - exposes five sequential integration prompts
-  that instrument a mobile app with the UXCam SDK. Web support marked coming soon.
+- Android (Kotlin/Java)
+- iOS (Swift/Objective-C)
+- Flutter
+- React Native
+notes: Guided SDK-integration server - exposes five sequential integration prompts that instrument a mobile
+  app with the UXCam SDK. Web support marked coming soon.
 prompts:
-  - name: integration_setup
-    description: Adds SDK dependencies, initializes UXCam with your app key
-  - name: screen_tagging
-    description: Implements automatic screen tracking
-  - name: mask_sensitive_data
-    description: Adds privacy protection for sensitive information
-  - name: event_tracking
-    description: Logs custom user actions
-  - name: user_properties
-    description: Sets user identity and custom properties
+- name: integration_setup
+  description: Adds SDK dependencies, initializes UXCam with your app key
+- name: screen_tagging
+  description: Implements automatic screen tracking
+- name: mask_sensitive_data
+  description: Adds privacy protection for sensitive information
+- name: event_tracking
+  description: Logs custom user actions
+- name: user_properties
+  description: Sets user identity and custom properties
+deployment:
+  mode: remote
+  endpoint: https://integration.mcp.uxcam.com/mcp/http
+  verified: probed
+  probe: live
+  tools: 3
+  checked: '2026-08-12'
+  source: catalog MCP census
