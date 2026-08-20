@@ -45,6 +45,8 @@ apis:
   humanURL: https://developer.uxcam.com/docs/data-access-api
   baseURL: https://api.uxcam.com/v2
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -81,6 +83,8 @@ apis:
   humanURL: https://developer.uxcam.com/docs/data-access-api
   baseURL: https://api.uxcam.com/v2
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
