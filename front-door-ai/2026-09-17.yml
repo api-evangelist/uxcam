@@ -1,0 +1,25 @@
+# Front Door AI Index — uxcam — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: uxcam
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: uxcam.com
+  final_host: uxcam.com
+  ownership: own
+  owner: uxcam
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 8
+  host_score: 8
+  density: 14.57
+  words: 549
+  tiers:
+    agentic: 0
+    core: 8
+    model: 0
+  ambiguous: 0
+  top_terms:
+    AI: 8
