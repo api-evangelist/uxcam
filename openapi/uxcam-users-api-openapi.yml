@@ -82,61 +82,6 @@ paths:
         '500':
           $ref: '#/components/responses/ServerError'
 components:
-  schemas:
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        message:
-          type: string
-    Envelope:
-      type: object
-      description: Standard UXCam Data Access API response envelope.
-      properties:
-        success:
-          type: boolean
-        data:
-          type: array
-          items:
-            type: object
-  responses:
-    NotFound:
-      description: The requested resource doesn't exist on the server.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Forbidden:
-      description: The server understands the request but refuses to authorise it.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: The request lacks valid authentication credentials (missing or invalid X-App-Id / X-Api-Key).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: The server cannot or will not process the request due to a client error.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    ServerError:
-      description: Server encountered an unexpected condition (500/502/503/504).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    TooManyRequests:
-      description: 'Rate limited: max five concurrent requests per second, 500 requests per hour (reset every 24 hours), 500 records per request.'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   parameters:
     comparison:
       name: comparison
@@ -158,14 +103,12 @@ components:
       description: 'JSON array of aggregation objects, e.g. {"attribute": "session_duration", "operator": "max"}.'
       schema:
         type: string
-    pageSize:
-      name: page_size
+    groupBy:
+      name: group_by
       in: query
-      description: Results per page. Default 50, maximum 1000; rate limits cap a single request at 500 fetched records.
+      description: 'JSON array of grouping objects: {"attribute", "max_group_number"} (analytics endpoints only).'
       schema:
-        type: integer
-        default: 50
-        maximum: 1000
+        type: string
     page:
       name: page
       in: query
@@ -174,12 +117,69 @@ components:
         type: integer
         default: 1
         minimum: 1
-    groupBy:
-      name: group_by
+    pageSize:
+      name: page_size
       in: query
-      description: 'JSON array of grouping objects: {"attribute", "max_group_number"} (analytics endpoints only).'
+      description: Results per page. Default 50, maximum 1000; rate limits cap a single request at 500 fetched records.
       schema:
-        type: string
+        type: integer
+        default: 50
+        maximum: 1000
+  responses:
+    BadRequest:
+      description: The server cannot or will not process the request due to a client error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ServerError:
+      description: Server encountered an unexpected condition (500/502/503/504).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    TooManyRequests:
+      description: 'Rate limited: max five concurrent requests per second, 500 requests per hour (reset every 24 hours), 500 records per request.'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource doesn't exist on the server.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: The request lacks valid authentication credentials (missing or invalid X-App-Id / X-Api-Key).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: The server understands the request but refuses to authorise it.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+    Envelope:
+      type: object
+      description: Standard UXCam Data Access API response envelope.
+      properties:
+        success:
+          type: boolean
+        data:
+          type: array
+          items:
+            type: object
   securitySchemes:
     AppId:
       type: apiKey
