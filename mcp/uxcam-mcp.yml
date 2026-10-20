@@ -67,3 +67,29 @@ tool_quality:
   scored: false
   note: Facts from the saved tools/list capture (mcp_tool_quality.py); recorded, not scored. Checks learned
     from Glimind's agent-readiness audit.
+tools:
+- name: uxcam_list_resources
+  description: "List available UXCam MCP resource URIs.\n\nArgs:\n  prefix: Optional **URI** prefix filter\
+    \ (e.g., \"mcp://uxcam/docs/android/latest/\").\n          Do NOT pass keywords like \"installation\"\
+    \ — use\n          uxcam_search_resources(query=\"installation\") instead.\n\nReturns:\n  {\n    \"\
+    uris\": [ ... ],\n    \"count\": <int>,\n    \"total\": <int>,\n    \"prefix\": \"<prefix or empty>\"\
+    ,\n    # When keyword misuse is detected:\n    \"hint\": \"<how to use search>\",\n    \"top_matches\"\
+    : [ {\"uri\": str, \"title\": str, \"score\": int} ]\n  }"
+- name: uxcam_read_resource
+  description: "Read a UXCam MCP resource by URI and return content with metadata.\n\nArgs:\n    uri:\
+    \ mcp://uxcam/... URI\n    include_code_blocks: Include extracted code blocks (if available).\n  \
+    \  max_chars: Truncate returned text to this many chars (optional)\n    with_metadata: Include metadata\
+    \ gathered from frontmatter/file.\n    include_frontmatter: Keep YAML frontmatter in the returned\
+    \ text.\n        Set False to strip it for token-efficient LLM consumption.\n\nReturns:\n    {\n \
+    \     \"uri\": str,\n      \"mimeType\": str,\n      \"text\": str,\n      \"metadata\": dict?,\n\
+    \      \"code_blocks\": [ {content, language, title, ...} ]?\n    }"
+- name: uxcam_search_resources
+  description: "Naive-but-robust search across resources with synonyms and ranking.\n\nArgs:\n  query:\
+    \ free text, e.g. \"installation\" or \"screen analytics\"\n  platform: optional (\"android\" | \"\
+    ios\" | \"react-native\" | \"flutter\" | \"web\")\n  phase: optional, ignored but kept for back-compat\n\
+    \  scope_prefix: optional URI prefix; if absent and platform is set,\n                defaults to\
+    \ f\"mcp://uxcam/docs/{platform}/\"\n  limit/offset: pagination\n\nReturns:\n  {\n    \"matches\"\
+    : [ {\"uri\": str, \"title\": str, \"score\": int} ],\n    \"count\": <int>,        # number returned\n\
+    \    \"total\": <int>,        # total available (after scoring)\n    \"scope_prefix\": \"<prefix or\
+    \ empty>\",\n    \"query\": \"<original>\",\n    \"slug_used\": \"<canonical or empty>\"\n  }"
+tools_count: 3
