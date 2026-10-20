@@ -1,0 +1,152 @@
+{
+  "endpoint": "https://integration.mcp.uxcam.com/mcp/http",
+  "captured": "2026-10-20",
+  "method": "initialize + tools/list (anonymous, no tool called; roadmap#992)",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "uxcam-integration-remote",
+    "version": "1.10.1"
+  },
+  "result": {
+    "tools": [
+      {
+        "name": "uxcam_list_resources",
+        "description": "List available UXCam MCP resource URIs.\n\nArgs:\n  prefix: Optional **URI** prefix filter (e.g., \"mcp://uxcam/docs/android/latest/\").\n          Do NOT pass keywords like \"installation\" — use\n          uxcam_search_resources(query=\"installation\") instead.\n\nReturns:\n  {\n    \"uris\": [ ... ],\n    \"count\": <int>,\n    \"total\": <int>,\n    \"prefix\": \"<prefix or empty>\",\n    # When keyword misuse is detected:\n    \"hint\": \"<how to use search>\",\n    \"top_matches\": [ {\"uri\": str, \"title\": str, \"score\": int} ]\n  }",
+        "inputSchema": {
+          "properties": {
+            "prefix": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Prefix"
+            }
+          },
+          "type": "object"
+        },
+        "outputSchema": {
+          "additionalProperties": true,
+          "type": "object"
+        }
+      },
+      {
+        "name": "uxcam_read_resource",
+        "description": "Read a UXCam MCP resource by URI and return content with metadata.\n\nArgs:\n    uri: mcp://uxcam/... URI\n    include_code_blocks: Include extracted code blocks (if available).\n    max_chars: Truncate returned text to this many chars (optional)\n    with_metadata: Include metadata gathered from frontmatter/file.\n    include_frontmatter: Keep YAML frontmatter in the returned text.\n        Set False to strip it for token-efficient LLM consumption.\n\nReturns:\n    {\n      \"uri\": str,\n      \"mimeType\": str,\n      \"text\": str,\n      \"metadata\": dict?,\n      \"code_blocks\": [ {content, language, title, ...} ]?\n    }",
+        "inputSchema": {
+          "properties": {
+            "uri": {
+              "title": "Uri",
+              "type": "string"
+            },
+            "include_code_blocks": {
+              "default": true,
+              "title": "Include Code Blocks",
+              "type": "boolean"
+            },
+            "max_chars": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Max Chars"
+            },
+            "with_metadata": {
+              "default": true,
+              "title": "With Metadata",
+              "type": "boolean"
+            },
+            "include_frontmatter": {
+              "default": true,
+              "title": "Include Frontmatter",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "uri"
+          ],
+          "type": "object"
+        },
+        "outputSchema": {
+          "additionalProperties": true,
+          "type": "object"
+        }
+      },
+      {
+        "name": "uxcam_search_resources",
+        "description": "Naive-but-robust search across resources with synonyms and ranking.\n\nArgs:\n  query: free text, e.g. \"installation\" or \"screen analytics\"\n  platform: optional (\"android\" | \"ios\" | \"react-native\" | \"flutter\" | \"web\")\n  phase: optional, ignored but kept for back-compat\n  scope_prefix: optional URI prefix; if absent and platform is set,\n                defaults to f\"mcp://uxcam/docs/{platform}/\"\n  limit/offset: pagination\n\nReturns:\n  {\n    \"matches\": [ {\"uri\": str, \"title\": str, \"score\": int} ],\n    \"count\": <int>,        # number returned\n    \"total\": <int>,        # total available (after scoring)\n    \"scope_prefix\": \"<prefix or empty>\",\n    \"query\": \"<original>\",\n    \"slug_used\": \"<canonical or empty>\"\n  }",
+        "inputSchema": {
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            },
+            "platform": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Platform"
+            },
+            "phase": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Phase"
+            },
+            "scope_prefix": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Scope Prefix"
+            },
+            "limit": {
+              "default": 10,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "offset": {
+              "default": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "outputSchema": {
+          "additionalProperties": true,
+          "type": "object"
+        }
+      }
+    ]
+  }
+}
